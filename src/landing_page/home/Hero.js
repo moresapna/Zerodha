@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
     return ( 
-        <div className="container py-5">
+        <div className="container">
             <div className="row">
                 <div className="col text-center">
                     <img
