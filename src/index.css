@@ -16,13 +16,6 @@ code {
     max-width: 1100px;
     margin: 50px auto;
     padding: 0 20px;
-    color: #666;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.container p {
-    margin-bottom: 18px;
 }
 
 .container a {
@@ -34,6 +27,22 @@ code {
     color: #000;
 }
 
+/* Footer */
+.Footer {
+    background-color: #FBFBFB;
+    border-top: 1px solid #efeaea;
+}
+
+.Footer p {
+    font-size: 14px;
+}
+
+.Footer-info p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #9B9B9B;
+}
+
 .footer-links {
     display: flex;
     justify-content: center;
@@ -41,7 +50,6 @@ code {
     gap: 28px;
     margin-top: 35px;
     padding: 20px 0;
-    border-top: 1px solid #eee;
 }
 
 .footer-links a {
@@ -53,3 +61,7 @@ code {
 .footer-links a:hover {
     color: #387ed1;
 } 
+
+.Stats-info p {
+    color: #666;
+}
