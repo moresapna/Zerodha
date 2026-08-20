@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -10,9 +11,7 @@ function Navbar() {
       }}
     >
       <div className="container-fluid px-4">
-
-        {/* Logo */}
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
             src="media/images/logo.svg"
             alt="Zerodha"
@@ -20,9 +19,8 @@ function Navbar() {
               width: "150px",
             }}
           />
-        </a>
+        </Link>
 
-        {/* Mobile button */}
         <button
           className="navbar-toggler"
           type="button"
@@ -35,7 +33,6 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Menu */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul
             className="navbar-nav ms-auto mb-2 mb-lg-0"
@@ -44,39 +41,39 @@ function Navbar() {
             }}
           >
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/signup">
                 Signup
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/products">
                 Products
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/pricing">
                 Pricing
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/support">
                 Support
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" href="#">
                 <i class="fa-solid fa-bars"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
