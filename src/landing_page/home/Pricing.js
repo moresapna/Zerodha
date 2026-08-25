@@ -15,7 +15,7 @@ function Pricing() {
                     <p>Free account opening</p>
                 </div>
                 <div className='col-2'>
-                    <img src='media/images/pricingEquity.svg' />
+                    <img src='media/images/intradayTrades.svg' />
                     <p>Free equity delivery and direct mutual funds</p>
                 </div>
                 <div className='col-2'>
