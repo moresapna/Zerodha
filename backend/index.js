@@ -5,11 +5,12 @@ dns.setServers(["8.8.8.8"]);
 
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser =require("body-parser");
-const cors =require("cors");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionModel } = require("./model/PositionModel");
+const { OrderModel } = require("./model/OrderModel");
 
 const PORT = process.env.PORT || 3002;
 const URL = process.env.MONGO_URL;
@@ -186,14 +187,39 @@ app.use(bodyParser.json());
 //   res.send("DONE");
 // });
 
-app.get('/allHoldings', async(req, res) => {
-  let allHoldings=await HoldingsModel.find({});
+app.get("/allHoldings", async (req, res) => {
+  let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
 });
 
-app.get('/allPosition', async(req, res) => {
-  let allPosition=await PositionModel.find({});
+app.get("/allPosition", async (req, res) => {
+  let allPosition = await PositionModel.find({});
   res.json(allPosition);
+});
+
+app.post("/newOrder", async (req, res) => {
+  try {
+    const newOrder = new OrderModel({
+      name: req.body.name,
+      qty: Number(req.body.qty),
+      price: Number(req.body.price),
+      mode: req.body.mode,
+    });
+
+    await newOrder.save();
+
+    res.status(201).json({
+      message: "Order Saved",
+      order: newOrder,
+    });
+  } catch (error) {
+    console.error("Error saving order:", error);
+
+    res.status(500).json({
+      message: "Failed to save order",
+      error: error.message,
+    });
+  }
 });
 
 mongoose
